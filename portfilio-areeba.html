@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashaf Kashish | Premium Portfolio</title>
+    <!-- Google Fonts for Luxury Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Link to our Style File -->
+    <link rel="stylesheet" href="style.css">
+    <style>/* --- CORE STYLES & SETUP --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0b0f19;
+    color: #f3f4f6;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- REUSABLE UTILITIES --- */
+.global-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+
+.section-heading {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.section-sub {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 50px;
+    font-size: 15px;
+}
+
+/* --- ANIMATION KEYFRAMES --- */
+@keyframes heroPulse {
+    0% { box-shadow: 0 0 0 0 rgba(26, 188, 156, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(26, 188, 156, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(26, 188, 156, 0); }
+}
+
+@keyframes smoothReveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dotPulse {
+    0% { transform: scale(0.95); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.5; }
+}
+
+/* --- NAVIGATION DESIGN --- */
+.navbar {
+    background-color: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span { color: #00df9a; }
+
+.nav-links a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #9ca3af;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.btn-nav-cta {
+    background: linear-gradient(135deg, #00df9a 0%, #02b880 100%);
+    color: #0b0f19 !important;
+    padding: 8px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 223, 154, 0.2);
+}
+
+.btn-nav-cta:hover {
+    box-shadow: 0 6px 25px rgba(0, 223, 154, 0.4);
+    transform: translateY(-2px);
+}
+
+/* --- HERO HIGH-GLOW DISPLAY --- */
+.hero-section {
+    padding: 120px 20px;
+    background: radial-gradient(circle at 50% 20%, rgba(0, 223, 154, 0.08) 0%, rgba(11, 15, 25, 0) 60%);
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 850px;
+    margin: 0 auto;
+    animation: smoothReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.profile-glow-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.hero-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    animation: heroPulse 2s infinite;
+}
+
+.hero-welcome {
+    color: #00df9a;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+}
+
+.hero-title span {
+    background: linear-gradient(to right, #ffffff, #00df9a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    color: #9ca3af;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.hero-lead {
+    font-size: 17px;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.hero-btns .btn-primary {
+    background-color: #ffffff;
+    color: #0b0f19;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 30px;
+    margin-right: 15px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.hero-btns .btn-primary:hover {
+    background-color: #00df9a;
+    transform: translateY(-3px);
+}
+
+.hero-btns .btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.hero-btns .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #ffffff;
+}
+
+/* --- ABOUT HIGHLIGHT --- */
+.about-section {
+    padding: 100px 20px;
+    background-color: #0e1322;
+}
+
+.about-card-main {
+    background-color: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.about-bio {
+    font-size: 20px;
+    color: #d1d5db;
+    max-width: 850px;
+    margin: 0 auto 30px auto;
+    font-weight: 300;
+}
+
+.experience-pill {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(0, 223, 154, 0.05);
+    color: #00df9a;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid rgba(0, 223, 154, 0.1);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00df9a;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: dotPulse 1.5s infinite;
+}
+
+/* --- PROJECTS PREMIUM MATRIX GRID --- */
+.projects-section {
+    padding: 100px 20px;
+}
+
+.matrix-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.matrix-card {
+    background-color: #0e1322;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    width: 480px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.matrix-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 223, 154, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 223, 154, 0.05);
+}
+
+.matrix-img-frame {
+    height: 250px;
+    overflow: hidden;
+}
+
+.matrix-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.matrix-card:hover .matrix-img-frame img {
+    transform: scale(1.08);
+}
+
+.matrix-content {
+    padding: 30px;
+}
+
+.matrix-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.matrix-content p {
+    color: #9ca3af;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.tech-tag {
+    background-color: #111827;
+    color: #00df9a;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid rgba(0, 223, 154, 0.1);
+}
+
+/* --- CREDENTIALS TIMELINE --- */
+.edu-section {
+    padding: 100px 20px;
+    background-color: #0e1322;
+}
+
+.edu-timeline-card {
+    background-color: #111827;
+    padding: 40px;
+    border-radius: 16px;
+    border-left: 4px solid #00df9a;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-badge {
+    color: #00df9a;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.edu-body h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 10px 0 5px 0;
+}
+
+.edu-body h4 {
+    color: #d1d5db;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.institute-title {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.edu-details {
+    color: #9ca3af;
+    font-size: 15px;
+}
+
+/* --- GLASS CONNECT HUB --- */
+.contact-section {
+    padding: 120px 20px;
+    background: radial-gradient(circle at 50% 80%, rgba(0, 223, 154, 0.05) 0%, rgba(11, 15, 25, 0) 50%);
+}
+
+.contact-pitch {
+    color: #9ca3af;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.glass-contact-hub {
+    background: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.hub-item { padding: 10px; }
+
+.hub-icon {
+    font-size: 28px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.hub-item p {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hub-item a, .location-text {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.hub-item a:hover { color: #00df9a; }
+
+.hub-divider {
+    width: 1px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- FOOTER SIGNATURE --- */
+.footer-signature {
+    background-color: #0b0f19;
+    padding: 40px 20px;
+    text-align: center;
+    color: #4b5563;
+    font-size: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    
+}
+/* --- INTERACTIVE FORM LAYOUT --- */
+.contact-flex-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.glass-contact-hub {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.interactive-form {
+    flex: 1.5;
+    min-width: 320px;
+    background: #0e1322;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+.interactive-form:hover {
+    border-color: rgba(0, 223, 154, 0.15);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    background-color: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 16px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00df9a;
+    background-color: #131b2e;
+    box-shadow: 0 0 15px rgba(0, 223, 154, 0.1);
+}
+
+.btn-form-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #00df9a 0%, #02b880 100%);
+    color: #0b0f19;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 223, 154, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 223, 154, 0.4);
+}</style>
+</head>
+<body>
+
+    <!-- 1. NAVIGATION BAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Areeba<span>.</span></a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Work</a>
+                <a href="#education">Education</a>
+                <a href="#contact" class="btn-nav-cta">Hire Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. HERO DISPLAY SECTION -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="profile-glow-wrapper">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop" alt="Areeba Amjad" class="hero-avatar">
+            </div>
+            <p class="hero-welcome">✨ Welcome to my digital space</p>
+            <h1 class="hero-title">I am <span>Kashaf Kashish</span></h1>
+            <h2 class="hero-subtitle">Aspiring Front-End Developer & UI Designer</h2>
+            <p class="hero-lead">Crafting immersive visual experiences and functional code layout designs that stay ahead of tomorrow.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT & EXPERIENCE HIGHLIGHT -->
+    <section id="about" class="about-section">
+        <div class="global-container">
+            <h2 class="section-heading">About Me</h2>
+            <div class="about-grid">
+                <div class="about-card-main">
+                    <p class="about-bio">I am a creative technologist pushing the boundaries of web interfaces. With <strong>3 months of active hands-on development</strong>, I transform creative structural ideas into live interactive digital products.</p>
+                    <div class="experience-pill">
+                        <span class="pulse-dot"></span> 3 Months Industry Immersion
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. GALLERY & PROJECTS DISPLAY -->
+    <section id="projects" class="projects-section">
+        <div class="global-container">
+            <h2 class="section-heading" style="color: white;">Showcase Grid</h2>
+            <p class="section-sub">Hover on cards to experience interactive zoom & glow mechanics</p>
+            <div class="matrix-grid">
+                <!-- Card 1 -->
+                <div class="matrix-card">
+                    <div class="matrix-img-frame">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=500&auto=format&fit=crop" alt="UI Layout Design">
+                    </div>
+                    <div class="matrix-content">
+                        <h3>Premium Personal Brand Space</h3>
+                        <p>An ultra-modern, dynamic portfolio framework focusing on fluid animation states and rich layout structure.</p>
+                        <span class="tech-tag">HTML5 / Architecture</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="matrix-card">
+                    <div class="matrix-img-frame">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop" alt="Corporate Architecture">
+                    </div>
+                    <div class="matrix-content">
+                        <h3>Enterprise Web Concept</h3>
+                        <p>High-end digital platform utilizing corporate micro-interactions, responsive styling elements, and sleek grid setups.</p>
+                        <span class="tech-tag">Modern Web Layout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. EDUCATION & INSTITUTION CERTIFICATION -->
+    <section id="education" class="edu-section">
+        <div class="global-container">
+            <h2 class="section-heading">Credentials</h2>
+            <div class="edu-timeline-card">
+                <div class="edu-meta">
+                    <span class="timeline-badge">6-Month Specialization</span>
+                </div>
+                <div class="edu-body">
+                    <h3>Web Designing & Development Certification</h3>
+                    <h4>GTTI RYK</h4>
+                    <p class="institute-title">Government Technical Training Institute, Rahim Yar Khan</p>
+                    <p class="edu-details">Graduated from an intensive, specialized 6-month technical training track covering modern layouts, standard grid systems, responsive frameworks, and web UI architectures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 6. CONTACT INTERFACE & CONNECT HUB -->
+    <section id="contact" class="contact-section">
+        <div class="global-container">
+            <h2 class="section-heading" style="color: white; margin-bottom: 10px;">Let's Create Together</h2>
+            <p class="contact-pitch text-center">Interested in working together? Drop a message below and I will get back to you shortly.</p>
+            
+            <div class="contact-flex-layout">
+                <!-- Left Side: Hub Info -->
+                <div class="glass-contact-hub">
+                    <div class="hub-item">
+                        <span class="hub-icon">📧</span>
+                        <p>Direct Inquiry</p>
+                        <a href="mailto:itskashaf572@gmil.com">itsareebamjad572@gmil.com</a>
+                    </div>
+                    <div class="hub-item">
+                        <span class="hub-icon">📍</span>
+                        <p>Current Station</p>
+                        <span class="location-text">Rahim Yar Khan, Pakistan</span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Contact Form -->
+                <form class="interactive-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you, Areeba received your message!');">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell me about your exciting project ideas..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-form-submit">Send Message 🚀</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    </footer>
+
+</body>
+</html>
